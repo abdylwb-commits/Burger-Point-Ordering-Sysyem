@@ -1,0 +1,132 @@
+print("---------< WELCOME TO USMAN BURGER POINT >---------")
+print("\n")
+print(" Press \n 1  --  For Menu \n 2  --  For Order  \n 3  --  For Helpline  \n 4 --   For Exit ")
+print("\n")
+
+menu = {
+    # BURGERS
+    "zinger burger": 550,
+    "zinger cheese burger": 650,
+    "chicken burger": 400,
+    "beef burger": 500,
+    "double patty burger": 750,
+    "tower burger": 850,
+    "mighty zinger burger": 900,
+
+    # SHAWARMA & SANDWICH
+    "shawarma": 350,
+    "chicken shawarma": 380,
+    "zinger shawarma": 420,
+    "shawarma platter": 650,
+    "club sandwich": 450,
+    "chicken sandwich": 380,
+    "bbq sandwich": 480,
+    "grilled sandwich": 420,
+
+    # FRIES & SIDES
+    "fries small": 150,
+    "fries large": 250,
+    "fries loaded": 400,
+    "mayo garlic fries": 300,
+    "chicken nuggets 6pc": 450,
+    "chicken nuggets 12pc": 800,
+    "chicken wings 6pc": 550,
+    "chicken wings 12pc": 1000,
+
+    # PIZZA
+    "pizza small chicken": 700,
+    "pizza medium chicken": 1100,
+    "pizza large chicken": 1500,
+    "pizza small fajita": 750,
+    "pizza medium fajita": 1150,
+    "pizza large fajita": 1600,
+
+    # DRINKS & DESSERT
+    "cold drink small": 100,
+    "cold drink large": 180,
+    "water": 80,
+    "ice cream scoop": 150
+}
+
+
+while True:
+    print("\n")
+
+    choice=input("-----Enter Choice  ::  ")
+    print("\n")                         
+
+    if choice =="1":
+        print("          ------THIS IS OUR MENU-----")     
+        for item, price in menu.items():
+            print(f"{item} - {price}")
+
+
+
+
+
+
+    elif choice =="2":
+        bill_items=[]
+        gross=0
+
+        while True :
+            dish=input(str("-----WHAT YOU WANT TO TAKE  ::  ")).lower().strip()
+            if dish not in menu:
+                print("Ye item menu me nahi hai")
+                continue
+
+            qty=int(input("-----Quintity  ::  "))
+
+            bill=menu[dish]
+            total=qty*bill
+            bill_items.append([dish,qty,bill,total])
+            gross+=total
+
+
+            aur=input("--DO YOU WANT SOMETHING MORE  Y/N : ").lower()
+            if aur!="y":
+                break
+        print("\n")
+        print("\n")
+        print("             --------YOUR BILL--------")
+        print("___________________________________________________")
+        print(f" {'DISH':<22} {'Quintity':<10} {'Bill':<8} {'Total'}")
+        print("___________________________________________________")
+        for item  in bill_items:
+             print(f" { item[0] :<22} {item[1]:<10} {item[2]:<8} {item[3]}")  
+
+
+
+
+
+        print("___________________________________________________")
+        print(" GROSS TOTAL  :: ",gross)
+        print("___________________________________________________")
+
+        print("              THANKS   FOR    VISIT ")
+
+        break
+
+
+
+
+    if choice =="3":
+
+        print("\n")
+
+
+        print("----  FOR ANY INFORMATION  OR FOR ANY COMPLAIN")
+        print("----  CALL TO OUR HELPLINE NUMBER")
+        print("----  03686753686")
+        print("\n")
+        break
+        print("___________________________________________________")
+
+
+
+
+    elif   choice =="4":
+
+
+        print("            ------THANKS FOR VISIT------")
+        break
